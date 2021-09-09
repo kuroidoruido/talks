@@ -103,13 +103,14 @@ section.multi-h1 h1:not(:first-of-type) {
 <!-- 
 Interprétés : PHP, JavaScript, Lua, Python
  - on ne va pas créer une binaire
- - le code est lu par un programme qui va exécuter les instructions directement
- (- modulo les JIT, opcache, etc.)
+ - le code est lu par un programme qui va interprêter le code directement
  - généralement portable entre différente plateforme
+
+
 Compilés : C/C++, Ada
- - on crée un binaire dédié à une plateforme
+ - le binaire n'est pas portable mais dédié à une plateforme
  - le binaire est composé d'instruction machine
- - le binaire n'est pas portable
+ - c'est plus rapide
 -->
 
 <!-- https://unsplash.com/photos/5N75xeV9x9Q -->
@@ -163,22 +164,6 @@ Tout ce qui fait qu'en Java on s'abstrait de la machine
 
 ---
 
-![bg right:50%](img/indoor-5235953_1920_square.jpg)
-
-# JIT ?
-
-<!--
-- manière de compiler
-- la jvm ne compile pas d'un coup toute l'application
-- la jvm va interpréter rapidement le bytecode
-- si le code est exécuté plusieurs fois, la jvm va compiler le bytecode en code natif 
-    et stocker le résultat pour avoir une exécution plus efficace
--->
-
-<!-- refs: https://www.jmdoudoux.fr/java/dej/chap-jvm.htm#jvm-5 -->
-<!-- https://pixabay.com/photos/indoor-time-waiting-classic-mood-5235953/ -->
-
---- 
 
 <style scoped>
     h1 {
@@ -190,13 +175,12 @@ Tout ce qui fait qu'en Java on s'abstrait de la machine
 ![bg vertical](img/alexandre-astier-franck-pitiot-dans-serie-kaamelott_banner.jpg)
 ![bg vertical opacity:0](img/alexandre-astier-franck-pitiot-dans-serie-kaamelott.jpg)
 
-# Parlons Graal !
+# Qu'est-ce que le Graal(VM) !
 
 <!--
 - on va maintenant rentrer au cœur du sujet : GraalVM
-- le nouveau compilateur et la nouvelle JVM proposé comme alternative à l'OpenJDK
+- C'est un set d'outils qui va se greffer autour d'une copie de l'OpenJDK
 - ce n'est pas juste une réécriture, mais il y a 2 grandes nouveautés : la compilation native et la JVM polyglotte
-- on peut aussi utiliser GraalVM sans passer au natif avec les commandes java standard mais avec 
 -->
 
 ---
@@ -267,27 +251,6 @@ public class App {
 
 ---
 
-On ne peut pas écrire :
-
-```diff
-import org.graalvm.polyglot.*;
-
-public class App {
-    public static void main(String[] args) {
-        try (Context context = Context.create()) {
-            var x = 1;
-            context.eval("js", "const y=2");
-+            context.eval("ruby", "z = 3");
--            Value fn = context.eval("js", "function foo(x) { return x+y; } foo"});
-+            Value fn = context.eval("js", "function foo(x) { return x+y+z; } foo"});
-            System.out.println(fn.execute(x)); // will print 6
-        }
-    }
-}
-```
-
----
-
 ![bg right:50%](img/rohit-farmer-cYRMl1HeuVo-unsplash_square.jpg)
 
 # Compilation native pourquoi faire ?
@@ -295,7 +258,7 @@ public class App {
 - sur une JVM classique on a un temps de warm up assez long
 - pas forcément un problème dans beaucoup de cas d'usage
 - peu poser problème pour des cas comme le cloud où on démarre/coupe des services souvent
-- la JVM est assez lourde et on utilise jamais tout
+- un JRE est assez lourd et on utilise jamais tout
 - le JIT prend du temps à tout compiler et donc au démarrage l'exécution est lente
 -->
 
@@ -336,26 +299,7 @@ public class App {
 
 # Quelques metriques
 
-<!--
-- on trouve pas mal de chiffre en ligne autour de GraalVM
-- sur le site officiel on trouve par exemple que le démarrage d'un microservice est 50x plus rapide
--->
-
 <!-- https://pixabay.com/illustrations/matrix-technology-tech-data-3109378/ -->
-
----
-
-# Production ready ?
-
-![bg left:50%](img/factory-4338627_1920_square.jpg)
-
-<!--
-- utilisé en prod chez Oracle, Twitter, Facebook, etc. au moins en partie
-- Des frameworks ont été construits spécialement pour être efficace avec GraalVM en natif : Micronaut, Quarkus, Helidon
-- Il y a le module Spring Native pour faire du GraalVM avec Spring et compilé en natif
--->
-
-<!-- https://pixabay.com/photos/factory-powerplant-landscape-clouds-4338627/ -->
 
 ---
 
@@ -420,6 +364,20 @@ refs: https://medium.com/graalvm/lightweight-cloud-native-java-applications-35d5
 
 ---
 
+# Production ready ?
+
+![bg left:50%](img/factory-4338627_1920_square.jpg)
+
+<!--
+- utilisé en prod chez Oracle, Twitter, Facebook, etc. au moins en partie
+- Des frameworks ont été construits spécialement pour être efficace avec GraalVM en natif : Micronaut, Quarkus, Helidon
+- Il y a le module Spring Native pour faire du GraalVM avec Spring et compilé en natif
+-->
+
+<!-- https://pixabay.com/photos/factory-powerplant-landscape-clouds-4338627/ -->
+
+---
+
 <style scoped>
 h1 {
     color: rgba(255,255,255,0.9);
@@ -444,15 +402,7 @@ h1 {
 <!-- https://pixabay.com/photos/king-coast-arthur-tintagel-statue-3879305/ -->
 
 ---
-<style scoped>
-section {
-    background-color: black;
-}
-</style>
 
-![bg 80%](img/thanks.gif)
-
----
 
 <style scoped>
 h3 {
