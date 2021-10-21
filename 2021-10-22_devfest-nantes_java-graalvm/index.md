@@ -115,23 +115,6 @@ Compilés : C/C++, Ada
 
 <!-- https://unsplash.com/photos/5N75xeV9x9Q -->
 
----
-
-![bg left:50%](img/indoor-5235953_1920_square.jpg)
-
-# JIT ?
-
-<!--
-- manière de compiler
-- la jvm ne compile pas d'un coup toute l'application
-- la jvm va interpréter rapidement le bytecode
-- si le code est exécuté plusieurs fois, la jvm va compiler le bytecode en code natif 
-    et stocker le résultat pour avoir une exécution plus efficace
--->
-
-<!-- refs: https://www.jmdoudoux.fr/java/dej/chap-jvm.htm#jvm-5 -->
-<!-- https://pixabay.com/photos/indoor-time-waiting-classic-mood-5235953/ -->
-
 --- 
 
 <!-- _class: multi-h1 -->
@@ -505,4 +488,5 @@ section {
 
 #### ![](img/twitter.png) @\_Anthony\_Pena\_
 #### ![](img/github.png) @kuroidoruido
+#### ![](img/linkedin.png) @penaanthony
 #### https://k49.fr.nf
