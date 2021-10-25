@@ -320,7 +320,7 @@ public class App {
 - la réflexion est autodétecté et partiellement calculé à la compilation
 - parfois il faut faire une configuration manuelle pour que le compilateur permettent certains éléments de réflexion
 - on n'a plus de jar portable, il faut compiler pour chaque plateforme
-- on ne peut plus suivre les versions de java tous les semestres (Java 16 en expérimental, sinon toujours Java 11)
+- on ne peut plus suivre les versions de java tous les semestres (Java 11 ou Java 17 uniquement)
 -->
 
 <!-- refs: https://www.graalvm.org/reference-manual/native-image/Reflection/ -->
