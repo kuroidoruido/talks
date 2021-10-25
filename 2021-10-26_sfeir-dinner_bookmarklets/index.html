@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Bookmarklets</title>
+        <meta name="viewport" content="width=device-width, initial-scale=2">
+        <script src="secrets.js"></script>
+        <style>
+            table {
+                width: 100%;
+                max-width: 100%;
+                font-size: 125%;
+                border-spacing: 0 3rem;
+            }
+            table td {
+                width: 50%;
+            }
+            table td:first-of-type {
+                text-align: center;
+            }
+            code pre {
+                background-color: lightgray;
+                border-radius: 10px;
+                padding: 10px 20px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <table>
+            <!-- BASIC BUTTON WITH CLICK EVENT -->
+            <tr>
+                <td>
+                    <button id="helloBtn">Hello</button>
+                    <script>
+                        const btn = document.querySelector('#helloBtn');
+                        btn.addEventListener('click', () => alert('World!'));
+                    </script>
+                </td>
+                <td>
+                    <code>
+                        <pre>
+&lt;button&gt;Hello&lt;/button&gt;
+&lt;script&gt;
+    const btn = document.querySelector('button');
+    btn.addEventListener('click', () => alert('World!'));
+&lt;/script&gt;</pre>
+                    </code>
+                </td>
+            </tr>
+            <!-- BASIC LINK WITH CLICK EVENT -->
+            <tr>
+                <td>
+                    <a href="javascript:alert('World!')">Hello</a>
+                </td>
+                <td>
+                    <code>
+                        <pre>
+&lt;a href="javascript:alert('World!')"&gt;Hello&lt;/a&gt;</pre>
+                    </code>
+                </td>
+            </tr>
+            <!-- BOOKMARKLET: CHANGE LINK COLOR -->
+            <tr>
+                <td>
+                    <a href="javascript:(() => {
+                        const style = document.createElement('style');
+                        style.innerText = 'a,a:hover,a:focus,a:visited{color: yellow;}';
+                        document.head.append(style);
+                    })()">Hello</a>
+                </td>
+                <td>
+                    <code>
+                        <pre>
+const style = document.createElement('style');
+style.innerText = 'a,a:hover,a:focus,a:visited{color: yellow;}';
+document.head.append(style)</pre>
+                    </code>
+                    <code>
+                        <pre>
+&lt;a href="javascript:(() => {
+    const style = document.createElement('style');
+    style.innerText = 'a,a:hover,a:focus,a:visited{color: yellow;}';
+    document.head.append(style);
+})()"&gt;Hello&lt;/a&gt;</pre>
+                    </code>
+                </td>
+            </tr>
+            <!-- BOOKMARKLET: SEARCH ON CURRENT PAGE -->
+            <tr>
+                <td data-e2e="search-on-current-page">
+                    <a href="javascript:(() => {
+                        const currentUrl = document.location.href;
+                        const googleSearchUrl = `https://www.google.fr/search?q=url%3A${currentUrl}`;
+                        document.location.replace(googleSearchUrl);
+                    })()">Search here</a>
+                </td>
+                <td>
+                    <code>
+                        <pre>
+&lt;a href="javascript:(() => {
+    const currentUrl = document.location.href;
+    const googleSearchUrl = `https://www.google.fr/search?q=url%3A${currentUrl}%2F`;
+    document.location.replace(googleSearchUrl);
+})()"&gt;Search here&lt;/a&gt;</pre>
+                    </code>
+                </td>
+            </tr>
+            <!-- BOOKMARKLET: BORDER ON undefined/null CLASS -->
+            <tr>
+                <td class="null" data-auto="element-with-undefined-class">
+                    <a href="javascript:(() => {
+                        const style = document.createElement('style');
+                        style.innerText = '.undefined,.null{border: 1px solid red;}';
+                        document.head.append(style);
+                    })()">Show undefined/null class</a>
+                </td>
+                <td class="undefined">
+                    <code>
+                        <pre>
+&lt;a href="javascript:(() => {
+    const style = document.createElement('style');
+    style.innerText = '.undefined,.null{border: 1px solid red;}';
+    document.head.append(style);
+})()"&gt;Show undefined/null class&lt;/a&gt;</pre>
+                    </code>
+                </td>
+            </tr>
+            <!-- BOOKMARKLET: BORDER ON element with data-auto/data-e2e/e2e-id attribute -->
+            <tr>
+                <td e2e-id="element-with-e2e-id">
+                    <a href="javascript:(() => {
+                        const style = document.createElement('style');
+                        style.innerText = `
+                        [data-e2e]{border: 3px dashed green;}
+                        [data-auto]{border: 3px dashed orange;}
+                        [e2e-id]{border: 3px dashed blue;}
+                        `;
+                        document.head.append(style);
+                    })()">Show elements with e2e selector</a>
+                </td>
+                <td>
+                    <code>
+                        <pre>
+&lt;a href="javascript:(() => {
+    const style = document.createElement('style');
+    style.innerText = `
+    [data-e2e]{border: 3px dashed green;}
+    [data-auto]{border: 3px dashed orange;}
+    [e2e-id]{border: 3px dashed blue;}
+    `;
+    document.head.append(style);
+})()"&gt;Show elements with e2e selector&lt;/a&gt;</pre>
+                    </code>
+                </td>
+            </tr>
+            <!-- BOOKMARKLET: send by sms selected text -->
+            <tr>
+                <td>
+                    <a href="" id="sendMeSms">Send me as SMS</a>
+                    <script>
+                        const link = document.getElementById('sendMeSms');
+                        link.setAttribute('href', `javascript:((secrets) => {
+                        const msg = window.getSelection() || 'nothing selected';
+                        fetch(\`http://localhost:3000/https://smsapi.free-mobile.fr/sendmsg?user=${SECRETS.user}&pass=${SECRETS.pass}&msg=\${encodeURI(msg)}\`);
+                    })()`)
+                    </script>
+                </td>
+                <td>
+                    <code>
+                        <pre>
+&lt;a href="javascript:(() => {
+    const msg = window.getSelection() || 'nothing selected';
+    fetch(`https://smsapi.free-mobile.fr/sendmsg?user=${SECRETS.user}&pass=${SECRETS.pass}&msg=${encodeURI(msg)}`);
+})()"&gt;Send me as SMS&lt;/a&gt;</pre>
+                    </code>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>
