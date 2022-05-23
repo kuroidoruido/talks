@@ -124,6 +124,19 @@ h6 {
         - outillage assez complet de base
         - intégration IDE
 
+- nvm / sdkman => rustup
+    - pour setup et gérer sa toolchain rust sans prise de tête
+
+- avec d'autres langages on a l'habitude d'empiler les outils pour travailler, avec cargo c'est magique
+    - init => cargo init
+    - tests : jest/jasmine/etc. / junit => cargo test
+    - lancer : npm run / mvn exec / gradle run => cargo run
+    - compiler : tsc / webpack / javac / ... => cargo build
+    - formatter : prettier / java ? => cargo fmt
+    - lint : tslint/eslint/sonar => cargo clippy
+    - etc.
+
+- 
 
 ---
 
