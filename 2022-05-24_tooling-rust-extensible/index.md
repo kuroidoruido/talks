@@ -8,7 +8,7 @@ html: true
 /* Global style */
 
 section.main-heading h1 {
-font-size: 400%;
+    font-size: 400%;
     position: absolute;
     bottom: 0.5em;
     right: 1em;
@@ -26,6 +26,15 @@ section.main-heading-top h2 {
 }
 section.h1-white h1 {
     color: white;
+}
+section.title-shadow-red h1 {
+    text-shadow: 0 0 15px rgba(255,0,0,.5), 0 0 10px rgba(255,0,0,.5);
+    /* https://html-css-js.com/css/generator/text-shadow/ */
+}
+section.title-shadow-white h1,
+section.title-shadow-white h2 {
+    text-shadow: 0 0 20px rgba(255,255,255,.8), 0 0 15px rgba(255,255,255,.8);
+    /* https://html-css-js.com/css/generator/text-shadow/ */
 }
 </style>
 
@@ -84,6 +93,7 @@ h6 {
 
 ---
 
+<!-- _class: title-shadow-red -->
 <style scoped>
     img {
         display: block;
@@ -108,36 +118,293 @@ h6 {
 
 ---
 
-- Rust est un langage prévu pour être : 
-    - Performant
-        - rapide et efficace en mémoire
-        - pas de runtime ou de garbage collector
-        - efficace en consommation de ressources
-        - peut être utilisé en embarqué
-    - Fiable
-        - système de type riche
-        - ownership et le modèle de partage mémoire et thread
-        - le tout à la compilation
-    - Productif
-        - bonne documentation
-        - message d'erreur compréhensible et bien détaillé et qui pointe vers la doc
-        - outillage assez complet de base
-        - intégration IDE
+<!-- _class: title-shadow-red -->
 
+# Rust un langage moderne
+
+![bg](./img/bg-rusted-big-top-right.jpg)
+
+---
+<style scoped>
+    h1:first-of-type {
+        padding-top: 12rem;
+    }
+    h1 {
+        text-align: center;
+    }
+</style>
+
+# Performant
+
+<!--
+- rapide et efficace en mémoire
+- pas de runtime ou de garbage collector
+- efficace en consommation de ressources
+- peut être utilisé en embarqué
+-->
+
+![bg vertical](./img/car-3366958_1920.jpg)
+![bg white opacity:0](./img/car-3366958_1920.jpg)
+
+--- 
+
+# Fiable
+
+<!--
+- système de type riche
+- ownership et le modèle de partage mémoire et thread
+- le tout à la compilation
+-->
+
+![bg left:50%](./img/lost-place-3163912_1920.jpg)
+
+---
+
+# Productif
+
+<!--
+- bonne documentation
+- message d'erreur compréhensible et bien détaillé et qui pointe vers la doc
+- outillage assez complet de base
+- intégration IDE
+-->
+
+![bg right:50%](./img/lost-places-3624565_1920.jpg)
+
+---
+
+<!-- _class: title-shadow-red -->
+<style scoped>
+    h1 {
+        text-align: right;
+    }
+</style>
+
+# Hello, world!
+
+![bg](./img/bg-rusted-big-bottom-left.jpg)
+
+---
+
+<!-- _class: title-shadow-white -->
+
+# mais aussi...
+
+![bg](./img/bg-rusted-small-bottom-right.jpg)
+
+---
+
+```Rust
+if foo == "SFEIR" {
+    // do something
+}
+
+for i in 0..10 {
+    // do something
+}
+```
+
+<!-- moins de parenthèses ! -->
+
+---
+
+```Rust
+fn check_foo() -> u8 {
+    if foo == "SFEIR" {
+        1
+    } else {
+        0
+    }
+}
+```
+
+<!-- if expression -->
+
+---
+
+```Rust
+
+type City = String;
+type Year = u16;
+
+enum Conf {
+    Devfest(City, Year),
+    Devoxx(Year),
+    None,
+}
+
+```
+
+<!--
+
+- type alias
+- enum = ADT / algebraic data types
+- struct
+
+-->
+---
+
+```Rust
+
+fn match_conf(conf: Conf) -> String {
+    match conf {
+        Devfest(city, year) => format!("Devfest {} {}", city, year),
+        Devoxx(year @ 2020..) => format!("Devoxx {}", year),
+        Devoxx(year) => format!("Devoxx {}", year),
+        None => format!("-")
+    }
+}
+
+```
+
+<!--
+
+- match remplace le switch
+- est aussi expression comme le if
+- return automatic sur la dernière instruction
+-->
+
+---
+
+<!-- _class: title-shadow-white -->
+
+# Et encore beaucoup d'autres points...
+
+![bg](./img/bg-rusted-big-bottom-right.jpg)
+
+---
+
+<!-- _class: title-shadow-red -->
+
+# Tooling
+
+![bg](./img/bg-rusted-small-top-right.jpg)
+
+---
+
+## Rustup
+
+```bash
+rustup toolchain install stable # installer une toolchain
+rustup update                   # la mettre à jour
+rustup default nightly          # changer de toolchain
+```
+
+<!--
 - nvm / sdkman => rustup
     - pour setup et gérer sa toolchain rust sans prise de tête
 
-- avec d'autres langages on a l'habitude d'empiler les outils pour travailler, avec cargo c'est magique
-    - init => cargo init
-    - tests : jest/jasmine/etc. / junit => cargo test
-    - lancer : npm run / mvn exec / gradle run => cargo run
-    - compiler : tsc / webpack / javac / ... => cargo build
-    - formatter : prettier / java ? => cargo fmt
-    - lint : tslint/eslint/sonar => cargo clippy
-    - etc.
+-->
 
-- 
+---
 
+<!-- _class: title-shadow-red -->
+
+# Cargo
+
+![bg](./img/bg-rusted-small-top-left.jpg)
+
+---
+
+<!-- _class: title-shadow-white -->
+
+# `cargo init`
+
+![bg](./img/bg-rusted-small-bottom-left.jpg)
+
+---
+
+<!-- _class: title-shadow-white -->
+
+# `cargo install` + `cargo update`
+
+![bg](./img/bg-rusted-big-bottom-left.jpg)
+
+---
+
+<!-- _class: title-shadow-white -->
+
+# `cargo package` + `cargo publish`
+
+![bg](./img/bg-rusted-big-bottom-right.jpg)
+
+---
+
+<!-- _class: title-shadow-white -->
+
+# `cargo run`
+
+![bg](./img/bg-rusted-small-bottom-right.jpg)
+
+---
+
+<!-- _class: title-shadow-white -->
+
+# `cargo test`
+## pour faire des tests de perfs `cargo bench`
+
+![bg](./img/bg-rusted-small-top-right.jpg)
+
+---
+
+<!-- _class: title-shadow-white -->
+
+# `cargo build`
+## pour aller en prod `cargo build --release --locked` 
+
+![bg](./img/bg-rusted-big-top-right.jpg)
+
+---
+
+<!-- _class: title-shadow-white -->
+
+# `cargo fmt`
+
+![bg](./img/bg-rusted-big-top-left.jpg)
+
+---
+
+<!-- _class: title-shadow-white -->
+
+# `cargo clippy`
+
+![bg](./img/bg-rusted-small-top-left.jpg)
+
+<!-- linter -->
+
+---
+
+<!-- _class: title-shadow-white -->
+
+# `cargo fix`
+
+![bg](./img/bg-rusted-small-bottom-left.jpg)
+
+<!-- Pour les plus feinéant : un fix auto des warnings -->
+
+---
+
+<!-- _class: title-shadow-white -->
+
+# `cargo hello` ?
+
+![bg](./img/bg-rusted-big-bottom-left.jpg)
+
+---
+
+# Conclusion
+
+![bg right:40%](./img/aggretsuko.jpg)
+
+<!--
+
+- Rust est un super langage
+- c'est pas simple au début mais le compilateur aide beaucoup
+    - même si il est un peu comme Retsuko : il râle très fort, il doit nous haïr profondément mais il semble gentil en nous expliquant les choses
+- le tooling est top
+- la doc est top aussi
+
+-->
 ---
 
 <style scoped>
@@ -173,6 +440,11 @@ figure img {
 #### ![](img/social/github.png) @kuroidoruido
 #### ![](img/social/linkedin.png) @penaanthony
 #### https://k49.fr.nf
+#### https://github.com/kuroidoruido/talks
+
+---
+
+![bg black](./img/social/thanks.gif)
 
 ---
 
@@ -180,5 +452,9 @@ figure img {
 
 - https://pixabay.com/users/tama66-1032521
     - fond de la slide de démarrage
+    - fond diapos titre
+    - usine abandonnée
+- https://pixabay.com/photos/lost-place-lokfriedhof-rust-3163912/
+    - train rouillé
 - Kaamelott
     - Photo du Père Blaise

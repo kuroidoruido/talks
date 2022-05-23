@@ -1,5 +1,9 @@
 # Talks
 
+## 2022
+
+- 24/05 - SFEIR QuarterBacks - [](https://kuroidoruido.github.io/talks/2022-05-24_tooling-rust-extensible/index.html) (20min)
+
 ## 2021
 
 - 26/10 - SFEIR Dinner - [Bookmarklets](https://kuroidoruido.github.io/talks/2021-10-26_sfeir-dinner_bookmarklets/index.html) (5min)
