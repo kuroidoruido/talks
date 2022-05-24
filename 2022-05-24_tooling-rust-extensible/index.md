@@ -202,23 +202,15 @@ if foo == "SFEIR" {
 for i in 0..10 {
     // do something
 }
+
+const check: u8 = if foo == "SFEIR" {
+    1
+} else {
+    0
+};
 ```
 
 <!-- moins de parenthèses ! -->
-
----
-
-```Rust
-fn check_foo() -> u8 {
-    if foo == "SFEIR" {
-        1
-    } else {
-        0
-    }
-}
-```
-
-<!-- if expression -->
 
 ---
 
