@@ -2,7 +2,7 @@
 
 ## 2022
 
-- 24/05 - SFEIR QuarterBacks - [Cargo ou comment étendre le tooling Rust à l'infini !](https://kuroidoruido.github.io/talks/2022-05-24_tooling-rust-extensible/index.html) (20min)
+- 24/05 - SFEIR QuarterBacks - [Cargo ou comment étendre le tooling Rust à l'infini !](https://kuroidoruido.github.io/talks/2022-05-24_sfeir-quarterbacks_tooling-rust-extensible/index.html) (20min)
 
 ## 2021
 
