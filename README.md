@@ -6,6 +6,7 @@
 
 ## 2021
 
+- 17/11 - SFEIR Lunch - [Java à la vitesse de la lumière grâce au Graal !](https://kuroidoruido.github.io/talks/2021-11-17_sfeir-lunch_java-graalvm/index.html) (20min)
 - 26/10 - SFEIR Dinner - [Bookmarklets](https://kuroidoruido.github.io/talks/2021-10-26_sfeir-dinner_bookmarklets/index.html) (5min)
 - 22/10 - DevFest Nantes - [Java à la vitesse de la lumière grâce au Graal !](https://kuroidoruido.github.io/talks/2021-10-22_devfest-nantes_java-graalvm/index.html) (20min)
 - 10/09 - JUG Summer Camp - [Java à la vitesse de la lumière grâce au Graal !](https://kuroidoruido.github.io/talks/2021-09-10_jug-summer-camp_java-graalvm/index.html) (20min)
