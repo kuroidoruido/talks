@@ -2,6 +2,8 @@
 
 ## 2022
 
+- 13/10 - Volcamp 2022 - [Cargo ou comment étendre le tooling Rust à l'infini !](https://kuroidoruido.github.io/talks/2022/10-13_volcamp_tooling-rust-extensible/index.html) (20min)
+- 20/09 - Sfeir Share [Ma mission en 5min : GladIA](https://kuroidoruido.github.io/talks/2022/09-20_sfeir-share_ma-mission-en-5-min--gladia/index.html) (5min)
 - 01/07 - SunnyTech 2022 - [Cargo ou comment étendre le tooling Rust à l'infini !](https://kuroidoruido.github.io/talks/2022/07-01_sunnytech_tooling-rust-extensible/index.html) (20min)
 - 09/06 - Camping des speakers - [Java à la vitesse de la lumière grâce au Graal !](https://kuroidoruido.github.io/talks/2022/06-09_camping-des-speakers_java-graalvm/index.html) (20min)
 - 24/05 - SFEIR QuarterBacks - [Cargo ou comment étendre le tooling Rust à l'infini !](https://kuroidoruido.github.io/talks/2022/05-24_sfeir-quarterbacks_tooling-rust-extensible/index.html) (20min)
