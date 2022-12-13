@@ -2,7 +2,7 @@
 
 ## 2022
 
-- 13/12 - SFEIR Share - [On vit déjà dans un monde fédéré !](https://kuroidoruido.github.io/talks/2022/12-13_sfeir-share_on-vit-deja-dans-un-monde-federe) (20min)
+- 13/12 - SFEIR Share - [On vit déjà dans un monde fédéré !](https://kuroidoruido.github.io/talks/2022/12-13_sfeir-share_on-vit-deja-dans-un-monde-federe/index.html) (15-20min)
 - 13/10 - Volcamp 2022 - [Cargo ou comment étendre le tooling Rust à l'infini !](https://kuroidoruido.github.io/talks/2022/10-13_volcamp_tooling-rust-extensible/index.html) (20min)
 - 20/09 - SFEIR Share - [Ma mission en 5min : GladIA](https://kuroidoruido.github.io/talks/2022/09-20_sfeir-share_ma-mission-en-5-min--gladia/index.html) (5min)
 - 01/07 - SunnyTech 2022 - [Cargo ou comment étendre le tooling Rust à l'infini !](https://kuroidoruido.github.io/talks/2022/07-01_sunnytech_tooling-rust-extensible/index.html) (20min)
