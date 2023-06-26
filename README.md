@@ -1,5 +1,9 @@
 # Talks
 
+## 2023
+
+- 27/06 - SFEIR Battle Front - [Angular](https://kuroidoruido.github.io/talks/2023/06-27_sfeir-battle-front_angular/index.html) (7min)
+
 ## 2022
 
 - 13/12 - SFEIR Share - [On vit déjà dans un monde fédéré !](https://kuroidoruido.github.io/talks/2022/12-13_sfeir-share_on-vit-deja-dans-un-monde-federe/index.html) (15-20min)
@@ -19,7 +23,7 @@
 ## 2020
 
 - 10/04 - SFEIR C'est bientôt le weekend - [JDR & MJ](https://kuroidoruido.github.io/talks/2020/04-10_sfeir-bientot-le-week-end_jdr_mj/slide.html) (20min)
-- 29/01 - SFEIR Dinner - Ma mission en 5min *confidentiel* (5min)
+- 29/01 - SFEIR Dinner - Ma mission en 5min _confidentiel_ (5min)
 - 16/01 - NantesJS - [REX dotJS 2019](https://kuroidoruido.github.io/talks/2020/01-16_rex-dotjs2019/Meetup_NantesJs_REXP_DotJS2019) (20min)
 
 ## 2019
