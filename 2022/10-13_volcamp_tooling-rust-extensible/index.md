@@ -1,5 +1,5 @@
 ---
-marp: false
+marp: true
 theme: default
 title: Cargo ou comment étendre le tooling Rust à l'infini ! - Anthony PENA - https://k49.fr.nf
 html: true

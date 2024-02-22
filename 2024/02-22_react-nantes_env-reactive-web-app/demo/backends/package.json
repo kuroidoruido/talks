@@ -1,0 +1,23 @@
+{
+  "name": "backends",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "accounts": "tsx watch ./src/accounts-api.ts",
+    "bff": "tsx watch ./src/bff-api.ts",
+    "cards": "tsx watch ./src/cards-api.ts",
+    "llm": "tsx watch ./src/llm-api.ts",
+    "transactions": "tsx watch ./src/transactions-api.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.11.19",
+    "tsx": "^4.7.1",
+    "typescript": "^5.3.3"
+  },
+  "engines": {
+    "node": "20"
+  }
+}
