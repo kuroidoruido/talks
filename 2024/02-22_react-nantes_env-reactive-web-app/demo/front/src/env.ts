@@ -7,7 +7,6 @@ export interface Env {
   toggles: {
     static: {
       assistant: boolean;
-      debug: boolean;
     };
     dynamic: {
       accounts: boolean;
@@ -28,7 +27,6 @@ const DEFAULT_ENV_STATE: Env = {
   toggles: {
     static: {
       assistant: false,
-      debug: false,
     },
     dynamic: {
       accounts: true,

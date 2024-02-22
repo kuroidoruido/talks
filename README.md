@@ -1,5 +1,9 @@
 # Talks
 
+## 2024
+
+- 22/02 - React Nantes - [Rendez votre application React réactive à l'environnement !](https://kuroidoruido.github.io/talks/2024/02-22_react-nantes_env-reactive-web-app/index.html) (20min)
+
 ## 2023
 
 - 27/06 - SFEIR Battle Front - [Angular](https://kuroidoruido.github.io/talks/2023/06-27_sfeir-battle-front_angular/index.html) (7min)
