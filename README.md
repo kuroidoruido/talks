@@ -2,6 +2,8 @@
 
 ## 2024
 
+- 21/05 - SFEIR Lunch - [Rendez votre application React réactive à l'environnement !](https://kuroidoruido.github.io/talks/2024/05-21_sfeir-lunch_env-reactive-web-app/index.html) (20min)
+
 - 22/02 - React Nantes - [Rendez votre application React réactive à l'environnement !](https://kuroidoruido.github.io/talks/2024/02-22_react-nantes_env-reactive-web-app/index.html) (20min)
 
 ## 2023

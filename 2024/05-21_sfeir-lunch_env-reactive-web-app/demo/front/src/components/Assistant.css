@@ -1,0 +1,15 @@
+button.assistant {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  font-size: 300%;
+  background: none;
+  border-radius: 50%;
+  margin: 0;
+
+  &:hover {
+    border-width: 3px;
+    margin-right: -2px;
+    margin-bottom: -2px;
+  }
+}
