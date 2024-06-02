@@ -58,11 +58,12 @@ a {
 
 ![bg](img/title-banner.jpg)
 
+<!--
 ---
 
 ![bg](./img/Who-are-you.jpg)
 
-<!-- 
+<! -- 
 - Qui est frontend ? fullstack ? backend ?
 - vous hoster sur un apache/nginx ? via votre backend ? via CDN ? autre ?
 - Imaginons que votre backend est cassé, c'est page blanche chez vous ?
