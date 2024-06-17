@@ -287,6 +287,81 @@ export class PlaygroundComponent {
 
 ---
 
+```TypeScript
+
+@Component({
+  template: `
+    <app-alert>Alert</app-alert>
+    <p>{{ text | async }}</p>
+    <app-card />
+    <app-card />
+  `,
+})
+export class PlaygroundComponent {
+  @Input() text: string;
+}
+
+```
+---
+
+```TypeScript
+
+@Component({
+  template: `
+    <app-alert>Alert</app-alert>
+    <p>{{ text | async }}</p>
+    <app-card />
+    <app-card />
+  `,
+})
+export class PlaygroundComponent {
+  @Input() text: string;
+  @Ouput() textChange = new EventEmitter<string>();
+}
+
+```
+---
+
+```TypeScript
+
+@Component({
+  template: `
+    <app-alert>Alert</app-alert>
+    <p>{{ text | async }}</p>
+    <app-card />
+    <app-card />
+  `,
+})
+export class PlaygroundComponent {
+  @Input() text: string;
+  @Ouput() textChange = new EventEmitter<string>();
+  @ViewChild(Alert) cards: Alert;
+}
+
+```
+---
+
+```TypeScript
+
+@Component({
+  template: `
+    <app-alert>Alert</app-alert>
+    <p>{{ text | async }}</p>
+    <app-card />
+    <app-card />
+  `,
+})
+export class PlaygroundComponent {
+  @Input() text: string;
+  @Ouput() textChange = new EventEmitter<string>();
+  @ViewChild(Alert) cards: Alert;
+  @ViewChildren(CustomCard) cards: QueryList<CustomCard>;
+}
+
+```
+
+---
+
 # C'est cool tout ça non ?
 
 ---
@@ -336,6 +411,13 @@ export class PlaygroundComponent {
 
 ---
 
+# CODE SLIDE : montrer effect
+---
+
+# CODE SLIDE : montrer computed
+
+---
+
 # Signals <3
 
 <!--
@@ -346,9 +428,32 @@ export class PlaygroundComponent {
 
 ---
 
+<style scoped>
+    section {
+        background: url(./img/github-tc39-signals_2.png) top center no-repeat;
+        background-size: cover
+    }
+    
+    h1 {
+        position: absolute;
+        bottom: 1rem;
+    }
+
+    a {
+        position: absolute;
+        bottom: 0;
+        right: 20px;
+        color: gray;
+        background-color: rgba(255,255,255,0.8);
+        width: fit-content;
+        padding: 0;
+    }
+</style>
+
 # Bientôt un standard
 
 https://github.com/tc39/proposal-signals
+
 
 <!--
 - en passe d'être standardisé dans ECMAScript (stage 1)
@@ -397,7 +502,23 @@ https://github.com/tc39/proposal-signals
 
 ---
 
-# RxJS = ReactiveX for JavaScript = librairie pour traiter des flux d'évènements
+# RxJS
+
+![bg center](./img/reactivex-bg.png)
+
+---
+
+# ReactiveX for JavaScript
+
+![bg center](./img/reactivex-bg.png)
+
+<!--
+- viens initialement de chez Netflix et plutôt côté backend
+-->
+
+---
+
+![bg center](./img/reactivex.png)
 
 <!--
 - avec les Signals on parlait de reactivité et d'état
@@ -411,6 +532,8 @@ https://github.com/tc39/proposal-signals
 ---
 
 # Parlons Observable
+
+![bg](./img/lazy-observer.jpeg)
 
 <!--
 - un Observable est stateless
@@ -431,27 +554,168 @@ https://github.com/tc39/proposal-signals
 
 ---
 
-# Montrer les limitations des Signals
+![bg cover](./img/tracy-lee_citation-de-ben-lesh_signals-vs-observable_wide2.jpg)
 
 ---
 
-![bg contain](./img/tracy-lee_citation-de-ben-lesh_signals-vs-observable.jpg)
+# Mais du coup les Signals...
+
+<!--
+
+- API beaucoup plus simple mais aussi beaucoup plus limité
+- stateful donc attention à l'impact mémoire en fonction de ce qu'on fait
+- pas forcément simple de garder un arbre de dépendance entre signal simple
+
+-->
 
 ---
 
-# Prendre le cas du HttpClient et des interceptors qui sont entièrement basés sur RxJS
+# Quelques cas concrets
 
 ---
 
-# Montrer par l’exemple de quand utiliser les Signals et quand utiliser RxJS
+# HttpClient et interceptors
+
+<!--
+- Entièrement basé sur RxJS
+- Il faudrait casser l'interface du HttpClient pour changer ça
+- Il faudrait tout ré-écrire pour passer sur des Signals
+- Pas de raison de le faire
+- C'est déjà facile de passer d'un Observable à un Signals
+- Donc HttpClient et interceptor => on reste sur RxJS 
+-->
+
+---
+
+// TODO slide code avec HttpClient
+
+---
+
+// TODO slide code avec interceptor
+
+---
+
+# HttpClient et interceptors
+
+// TODO logo RxJS
+
+---
+
+# État interne des composants
+
+<!--
+- Faire du full Signals pour être plus simple
+- Plus d'async, plus de fuite mémoire (ou presque)
+- ne plus utiliser RxJS à moins de ne pas avoir le choix (est-ce que ce n'est pas une erreur de design si on est obligé ?)
+-->
+
+---
+
+# Reactive Forms
+
+<!--
+- basé sur RxJS
+- l'API expose des Observables
+    - logique comme c'est des events
+- à priori ça ne changera pas
+-->
+
+---
+
+# Services
+
+<!--
+- Ça dépend mais je pencherais plutôt sur RxJS par défaut ou valeur simple
+- Si on sait que la valeur va beaucoup changer RxJS
+- Si la valeur bouge peu : valeur simple
+-->
+
+---
+
+# Global state management (NgRx, NgXs)
+
+<!--
+- Basé sur RxJS
+- API pensé pour être simple avec RxJS
+- Exploite à fond les opérateurs RxJS
+- Optimisé pour RxJS
+-->
+
+---
+
+# The NgXs way
+
+<!--
+- Fournir des utilitaires qui permettent directement de faire le pont entre NgXs et nos composants sous forme de Signal
+-->
+
+---
+
+# The NgXs way
+
+// TODO ajouter un bout de code montrant le mapping Signal
+
+---
+
+# The NgRx way
+
+<!--
+- Signal Store
+- Un store basé sur les Signals
+- Fourni des ponts pour utiliser du RxJS quand c'est plus pratique
+- encore en preview !
+-->
+
+---
+
+# The NgRx way
+
+// TODO ajouter un bout de code montrant la creation d'un Signal Store
+
+---
+
+# The NgRx way
+
+// TODO ajouter un bout de code montrant le mapping Signal dans un composant
+
+---
+
+# The NgRx way
+
+// TODO ajouter un bout de code montrant l'utilisation d'RxJS dans le store
+
+---
+
+# En résumé
+
+![bg](./img/summary.jpeg)
 
 ---
 
 # Les Signals c'est pour gérer les états et la réactivité dans les composants
 
+![bg](./img/components_signals.jpeg)
+
 ---
 
 # RxJS est là pour gérer tous vos flux de données
+
+![bg](./img/stream_rxjs.jpeg)
+
+---
+
+<style scoped>
+    a {
+        position: absolute;
+        bottom: 0;
+        right: 20px;
+        color: gray;
+    }
+</style>
+
+![bg](./img/ben-lesh-signals-vs-observable.png)
+
+https://x.com/BenLesh/status/1775207971410039230
 
 ---
 
