@@ -104,6 +104,14 @@ img[alt="angulardevs.fr"] {
 
 ---
 
+<style scoped>
+    h1 {
+        position: absolute;
+        top: 2em;
+        left: 2em;
+    }
+</style>
+
 # Avant les frameworks
 
 ![bg](./img/prehistoric-tools.jpeg)
@@ -130,7 +138,17 @@ img[alt="angulardevs.fr"] {
 
 ---
 
-> "A declarative programming model for updating based on changes to state." Kristen / pzuraq
+<style scoped>
+    a {
+        position: absolute;
+        bottom: 0;
+        right: 20px;
+        color: gray;
+    }
+</style>
+
+> "A declarative programming model for updating based on changes to state."
+> -- Kristen / pzuraq
 
 https://www.pzuraq.com/blog/what-is-reactivity
 
@@ -138,6 +156,14 @@ https://www.pzuraq.com/blog/what-is-reactivity
 l'idée c'est de définir des données, les mapper et avoir un mécanisme qui réagit tout seul pour faire en sorte de synchroniser le tout
 -->
 ---
+
+<style scoped>
+    h1 {
+        position: absolute;
+        top: 2em;
+        right: 2em;
+    }
+</style>
 
 # Angular.JS et ses watchers
 
@@ -155,9 +181,18 @@ l'idée c'est de définir des données, les mapper et avoir un mécanisme qui r�
     - ça marche tant que y'a pas grand chose à watch
     - c'est pas perf
     - plus y'a de watch plus c'est lourd et lent
+    - on est limité au tick du watcher
 -->
 
 ---
+
+<style scoped>
+    h1 {
+        position: absolute;
+        bottom: 2em;
+        left: 2em;
+    }
+</style>
 
 # Angular 2 et Zone.js
 
@@ -364,6 +399,12 @@ export class PlaygroundComponent {
 
 # C'est cool tout ça non ?
 
+<!--
+- c'est simple à écrire (bien que parfois un peu verbeux)
+- c'est réactif
+- on y est habitué
+-->
+
 ---
 
 # Oui mais Zone.js
@@ -385,7 +426,17 @@ export class PlaygroundComponent {
 
 ---
 
+<style scoped>
+    h1 {
+        position: absolute;
+        bottom: 2em;
+        left: 2em;
+    }
+</style>
+
 # Angular 17 et les Signals
+
+![bg](./img/starship.webp)
 
 <!--
 - experimental à partir de la v16
@@ -411,10 +462,28 @@ export class PlaygroundComponent {
 
 ---
 
-# CODE SLIDE : montrer effect
+# CODE SLIDE : montrer computed
+
 ---
 
-# CODE SLIDE : montrer computed
+# CODE SLIDE : montrer effect
+
+---
+
+# CODE SLIDE : demo Signal input()
+
+---
+
+# CODE SLIDE : demo Signal output()
+
+---
+
+# CODE SLIDE : demo Signal viewchild()
+
+<!--
+- moins d'anotation
+- moins de complexité dans les composants
+-->
 
 ---
 
@@ -458,6 +527,7 @@ https://github.com/tc39/proposal-signals
 <!--
 - en passe d'être standardisé dans ECMAScript (stage 1)
 - l'implémentation est simple
+- Annecdote : le polyfill actuel est basé sur l'implémentation des Signals d'Angular
 -->
 
 ---
@@ -470,22 +540,6 @@ https://github.com/tc39/proposal-signals
 - et on commence à pouvoir remplacer beaucoup de chose par des signals
 -->
 
----
-
-# CODE SLIDE : demo Signal input()
-
----
-
-# CODE SLIDE : demo Signal output()
-
----
-
-# CODE SLIDE : demo Signal viewchild()
-
-<!--
-- moins d'anotation
-- moins de complexité dans les composants
--->
 
 ---
 
@@ -497,8 +551,16 @@ https://github.com/tc39/proposal-signals
 -->
 
 ---
+<style scoped>
+    h1 {
+        position: absolute;
+        bottom: 1rem;
+    }
+</style>
 
 # Mais au fait... C'est quoi RxJS ?
+
+![bg](./img/rxjs-what.webp)
 
 ---
 
@@ -664,6 +726,8 @@ https://github.com/tc39/proposal-signals
 - Un store basé sur les Signals
 - Fourni des ponts pour utiliser du RxJS quand c'est plus pratique
 - encore en preview !
+
+- créé par Brandon Roberts
 -->
 
 ---
