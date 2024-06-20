@@ -3,6 +3,7 @@ marp: true
 theme: default
 title: Adieu RxJS ! Vive les Signals ! Oh wait… - Anthony PENA - https://k49.fr.nf
 html: true
+footer: @_Anthony_Pena
 ---
 
 <style>
@@ -54,8 +55,10 @@ h6 {
 a {
     color: white;
 }
+footer {
+  display: none;
+}
 </style>
-
 
 # Adieu RxJS ! Vive les Signals ! Oh wait…
 
@@ -92,6 +95,9 @@ img[alt="angulardevs.fr"] {
     max-width: 5rem;
     max-height: 5rem;
     display: inline;
+}
+footer {
+  display: none;
 }
 </style>
 
@@ -139,6 +145,9 @@ img[alt="angulardevs.fr"] {
 ---
 
 <style scoped>
+    blockquote {
+      font-size: 130%
+    }
     a {
         position: absolute;
         bottom: 0;
@@ -148,6 +157,7 @@ img[alt="angulardevs.fr"] {
 </style>
 
 > "A declarative programming model for updating based on changes to state."
+> 
 > -- Kristen / pzuraq
 
 https://www.pzuraq.com/blog/what-is-reactivity
@@ -209,7 +219,6 @@ l'idée c'est de définir des données, les mapper et avoir un mécanisme qui r�
 ---
 
 ```TypeScript
-
 @Component({
   template: `
     <p>{{ text }}</p>
@@ -222,7 +231,6 @@ export class PlaygroundComponent {
       setInterval(() => this.text += '!', 1_000)
   }
 }
-
 ```
 
 <!-- # CODE SLIDE : avec l'édition d'une variable -->
@@ -230,7 +238,6 @@ export class PlaygroundComponent {
 ---
 
 ```TypeScript
-
 @Component({
   template: `
     <input (change)="setText($event)"/>
@@ -244,7 +251,6 @@ export class PlaygroundComponent {
     this.text = (event.target as HTMLInputElement).value;
   }
 }
-
 ```
 
 <!-- # CODE SLIDE : avec l'édition d'un champ de texte -->
@@ -252,7 +258,6 @@ export class PlaygroundComponent {
 ---
 
 ```TypeScript
-
 @Component({
   template: `
     <input [(ngModel)]="text"/>
@@ -266,7 +271,6 @@ export class PlaygroundComponent {
       setInterval(() => this.text += '!', 1_000)
   }
 }
-
 ```
 
 <!-- # CODE SLIDE : avec du two-way data binding -->
@@ -274,7 +278,6 @@ export class PlaygroundComponent {
 ---
 
 ```TypeScript
-
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -293,7 +296,6 @@ export class PlaygroundComponent {
     // ...
   }
 }
-
 ```
 
 <!-- # CODE SLIDE : avec la résolution d'une promesse en mappant le retour -->
@@ -302,7 +304,6 @@ export class PlaygroundComponent {
 ---
 
 ```TypeScript
-
 @Component({
   template: `
     <p>{{ text | async }}</p>
@@ -315,7 +316,6 @@ export class PlaygroundComponent {
     // ...
   }
 }
-
 ```
 
 <!-- # CODE SLIDE : avec la résolution d'une promesse en async pipe-->
@@ -323,7 +323,6 @@ export class PlaygroundComponent {
 ---
 
 ```TypeScript
-
 @Component({
   template: `
     <app-alert>Alert</app-alert>
@@ -335,12 +334,10 @@ export class PlaygroundComponent {
 export class PlaygroundComponent {
   @Input() text: string;
 }
-
 ```
 ---
 
 ```TypeScript
-
 @Component({
   template: `
     <app-alert>Alert</app-alert>
@@ -353,12 +350,10 @@ export class PlaygroundComponent {
   @Input() text: string;
   @Output() textChange = new EventEmitter<string>();
 }
-
 ```
 ---
 
 ```TypeScript
-
 @Component({
   template: `
     <app-alert>Alert</app-alert>
@@ -372,12 +367,10 @@ export class PlaygroundComponent {
   @Output() textChange = new EventEmitter<string>();
   @ViewChild(Alert) alerts: Alert;
 }
-
 ```
 ---
 
 ```TypeScript
-
 @Component({
   template: `
     <app-alert>Alert</app-alert>
@@ -392,22 +385,35 @@ export class PlaygroundComponent {
   @ViewChild(Alert) alerts: Alert;
   @ViewChildren(CustomCard) cards: QueryList<CustomCard>;
 }
-
 ```
 
 ---
 
+<style scoped>
+    h1 {
+        position: absolute;
+        top: 2em;
+        right: 2em;
+    }
+</style>
+
 # C'est cool tout ça non ?
+
+![bg](./img/cool-stuff.jpeg)
 
 <!--
 - c'est simple à écrire (bien que parfois un peu verbeux)
 - c'est réactif
 - on y est habitué
+MAIS
+- quand même pas mal d'annotation, de type à mettre, et...
 -->
 
 ---
 
 # Oui mais Zone.js
+
+![bg](./img/zone_wide.jpeg)
 
 <!--
 
@@ -556,7 +562,6 @@ export class PlaygroundComponent {
 ---
 
 ```TypeScript
-
 @Component({
   template: `
     <app-alert>Alert</app-alert>
@@ -571,7 +576,6 @@ export class PlaygroundComponent {
   @ViewChild(Alert) alerts: Alert;
   @ViewChildren(CustomCard) cards: QueryList<CustomCard>;
 }
-
 ```
 
 ---
@@ -599,7 +603,6 @@ export class PlaygroundComponent {
 ---
 
 ```TypeScript
-
 @Component({
   template: `
     <app-alert>Alert</app-alert>
@@ -614,14 +617,12 @@ export class PlaygroundComponent {
   @ViewChild(Alert) alerts: Alert;
   @ViewChildren(CustomCard) cards: QueryList<CustomCard>;
 }
-
 ```
 <!-- # CODE SLIDE : demo Signal output() -->
 
 ---
 
 ```TypeScript
-
 @Component({
   template: `
     <app-alert>Alert</app-alert>
@@ -636,7 +637,6 @@ export class PlaygroundComponent {
   alerts = viewChild(Alert);
   cards = viewChildren(CustomCard);
 }
-
 ```
 <!-- # CODE SLIDE : demo Signal viewchild() / viewChildren() -->
 
@@ -647,7 +647,9 @@ export class PlaygroundComponent {
 
 ---
 
-# Signals <3
+# Signals ❤️
+
+![bg](./img/signals-love.jpeg)
 
 <!--
 - rien de compliqué
@@ -693,6 +695,8 @@ https://github.com/tc39/proposal-signals
 ---
 
 # Zone.js c'est fini ?
+
+![bg](./img/cleaning-toxic-zone.jpeg)
 
 <!--
 - plus besoin de Zone
@@ -788,6 +792,13 @@ export class PlaygroundComponent {
 
 ---
 
+<style scoped>
+  section {
+      background: url(./img/broken-heart.jpeg) bottom center no-repeat;
+      background-size: cover
+  }
+</style>
+
 # Mais du coup les Signals...
 
 <!--
@@ -800,14 +811,20 @@ export class PlaygroundComponent {
 
 ---
 
+<style scoped>
+  section {
+      background: url(./img/sharing.jpeg) bottom right no-repeat;
+      background-size: contain;
+      background-color: white;
+  }
+</style>
+
+
 # Quelques cas concrets
 
 ---
 
-# HttpClient et interceptors
-
-
----
+# HttpClient
 
 ```TypeScript
 @Component({
@@ -832,6 +849,8 @@ export class PlaygroundComponent {
 
 ---
 
+# ... et interceptor
+
 ```TypeScript
 export function authInterceptor(
   req: HttpRequest<unknown>,
@@ -843,7 +862,6 @@ export function authInterceptor(
     })
   );
 }
-
 ```
 
 <!--
@@ -857,6 +875,16 @@ export function authInterceptor(
 # État interne des composants
 
 
+
+```TypeScript
+@Component({
+  template: ` <p>{{ text() }}</p> `,
+})
+export class PlaygroundComponent {
+  text = signal('');
+}
+```
+
 <!--
 - Faire du full Signals pour être plus simple
 - Plus d'async, plus de fuite mémoire (ou presque)
@@ -866,6 +894,8 @@ export function authInterceptor(
 ---
 
 # Reactive Forms
+
+![bg](./img/forms.jpeg)
 
 <!--
 - basé sur RxJS
@@ -878,6 +908,8 @@ export function authInterceptor(
 
 # Services
 
+![bg](./img/buttler.jpeg)
+
 <!--
 - Ça dépend mais je pencherais plutôt sur RxJS par défaut ou valeur simple
 - Si on sait que la valeur va beaucoup changer RxJS
@@ -886,7 +918,16 @@ export function authInterceptor(
 
 ---
 
-# Global state management (NgRx, NgXs)
+<style scoped>
+  h1 {
+    max-width: 55%;
+    text-align: center;
+  }
+</style>
+
+# Global state management<br/>(NgRx, NgXs)
+
+![bg](./img/stone-registry.jpeg)
 
 <!--
 - Basé sur RxJS
@@ -899,11 +940,15 @@ export function authInterceptor(
 
 # The NgXs way
 
+![bg left:54%](./img/way.jpeg)
+
 <!--
 - Fournir des utilitaires qui permettent directement de faire le pont entre NgXs et nos composants sous forme de Signal
 -->
 
 ---
+
+# Classic way
 
 ```TypeScript
 @Component({ ... })
@@ -915,6 +960,8 @@ export class ZooComponent {
 ```
 ---
 
+# Signal way
+
 ```TypeScript
 @Component({ ... })
 export class ZooComponent {
@@ -925,6 +972,9 @@ export class ZooComponent {
 ---
 
 # The NgRx way
+
+![bg right:54%](./img/way.jpeg)
+
 
 <!--
 - Signal Store
@@ -1048,6 +1098,9 @@ img[alt="angulardevs.fr"] {
     width: 5rem;
     display: inline;
 }
+footer {
+  display: none;
+}
 </style>
 
 ![bg left:33%](img/social/me.jpg)
@@ -1062,6 +1115,7 @@ img[alt="angulardevs.fr"] {
 #### https://github.com/kuroidoruido/talks
 
 ![angulardevs.fr](img/social/angular-devs.svg) ![angulardevs.fr](img/social/wow.png)
+
 
 ---
 
