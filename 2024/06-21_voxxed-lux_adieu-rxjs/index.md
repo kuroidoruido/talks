@@ -327,7 +327,7 @@ export class PlaygroundComponent {
 @Component({
   template: `
     <app-alert>Alert</app-alert>
-    <p>{{ text | async }}</p>
+    <p>{{ text }}</p>
     <app-card />
     <app-card />
   `,
@@ -344,14 +344,14 @@ export class PlaygroundComponent {
 @Component({
   template: `
     <app-alert>Alert</app-alert>
-    <p>{{ text | async }}</p>
+    <p>{{ text  }}</p>
     <app-card />
     <app-card />
   `,
 })
 export class PlaygroundComponent {
   @Input() text: string;
-  @Ouput() textChange = new EventEmitter<string>();
+  @Output() textChange = new EventEmitter<string>();
 }
 
 ```
@@ -362,15 +362,15 @@ export class PlaygroundComponent {
 @Component({
   template: `
     <app-alert>Alert</app-alert>
-    <p>{{ text | async }}</p>
+    <p>{{ text }}</p>
     <app-card />
     <app-card />
   `,
 })
 export class PlaygroundComponent {
   @Input() text: string;
-  @Ouput() textChange = new EventEmitter<string>();
-  @ViewChild(Alert) cards: Alert;
+  @Output() textChange = new EventEmitter<string>();
+  @ViewChild(Alert) alerts: Alert;
 }
 
 ```
@@ -381,15 +381,15 @@ export class PlaygroundComponent {
 @Component({
   template: `
     <app-alert>Alert</app-alert>
-    <p>{{ text | async }}</p>
+    <p>{{ text }}</p>
     <app-card />
     <app-card />
   `,
 })
 export class PlaygroundComponent {
   @Input() text: string;
-  @Ouput() textChange = new EventEmitter<string>();
-  @ViewChild(Alert) cards: Alert;
+  @Output() textChange = new EventEmitter<string>();
+  @ViewChild(Alert) alerts: Alert;
   @ViewChildren(CustomCard) cards: QueryList<CustomCard>;
 }
 
@@ -450,35 +450,195 @@ export class PlaygroundComponent {
 
 ---
 
-# CODE SLIDE : reprendre la demo edition de variable mais en Signal
+```TypeScript
+@Component({
+  template: ` <p>{{ text() }}</p> `,
+})
+export class PlaygroundComponent {
+  text = signal('');
+
+  constructor() {
+    setInterval(() => {
+      this.text.set(this.text() + '!');
+      // or
+      // this.text.update((actual) => actual + '!')
+    }, 1_000);
+  }
+}
+```
+
+<!-- # CODE SLIDE : reprendre la demo edition de variable mais en Signal -->
 
 ---
 
-# CODE SLIDE : reprendre la demo edition de champ de texte mais en Signal
+```TypeScript
+@Component({
+  template: `
+    <input (change)="setText($event)" />
+    <p>{{ text() }}</p>
+  `,
+})
+export class PlaygroundComponent {
+  text = signal('');
+
+  setText(event: Event) {
+    this.text.set((event.target as HTMLInputElement).value);
+  }
+}
+```
+
+<!-- # CODE SLIDE : reprendre la demo edition de champ de texte mais en Signal -->
 
 ---
 
-# CODE SLIDE : reprendre la demo promesse mais en Signal
+```TypeScript
+@Component({
+  template: `<p>{{ text() }}</p> `,
+})
+export class PlaygroundComponent {
+  text = signal('waiting...');
+
+  constructor() {
+    this.asyncHello().then((text) => this.text.set(text));
+  }
+
+  private asyncHello(): Promise<string> {
+    // ...
+  }
+}
+```
+
+<!-- # CODE SLIDE : reprendre la demo promesse mais en Signal -->
 
 ---
 
-# CODE SLIDE : montrer computed
+```TypeScript
+@Component({
+  template: `
+    <p>{{ text() }}</p>
+    <p>{{ questionText() }}</p>
+  `,
+})
+export class PlaygroundComponent {
+  text = signal('');
+  questionText = computed(() => this.text().replaceAll('!', '?'));
+
+  constructor() {
+    setInterval(() => {
+      this.text.set(this.text() + '!');
+    }, 1_000);
+  }
+}
+```
+
+<!-- # CODE SLIDE : montrer computed -->
 
 ---
 
-# CODE SLIDE : montrer effect
+```TypeScript
+@Component({
+  template: ` <p>{{ text() }}</p> `,
+})
+export class PlaygroundComponent {
+  text = signal('');
+
+  constructor() {
+    setInterval(() => this.text.set(this.text() + '!'), 1_000);
+    effect(() => {
+      console.log('text =', this.text());
+    });
+  }
+}
+```
+
+<!-- # CODE SLIDE : montrer effect -->
 
 ---
 
-# CODE SLIDE : demo Signal input()
+```TypeScript
+
+@Component({
+  template: `
+    <app-alert>Alert</app-alert>
+    <p>{{ text }}</p>
+    <app-card />
+    <app-card />
+  `,
+})
+export class PlaygroundComponent {
+  @Input() text: string;
+  @Output() textChange = new EventEmitter<string>();
+  @ViewChild(Alert) alerts: Alert;
+  @ViewChildren(CustomCard) cards: QueryList<CustomCard>;
+}
+
+```
 
 ---
 
-# CODE SLIDE : demo Signal output()
+
+```TypeScript
+@Component({
+  template: `
+    <app-alert>Alert</app-alert>
+    <p>{{ text() }}</p>
+    <app-card />
+    <app-card />
+  `,
+})
+export class PlaygroundComponent {
+  text = input('');
+  @Output() textChange = new EventEmitter<string>();
+  @ViewChild(Alert) alerts: Alert;
+  @ViewChildren(CustomCard) cards: QueryList<CustomCard>;
+}
+```
+
+<!-- # CODE SLIDE : demo Signal input() -->
 
 ---
 
-# CODE SLIDE : demo Signal viewchild()
+```TypeScript
+
+@Component({
+  template: `
+    <app-alert>Alert</app-alert>
+    <p>{{ text() }}</p>
+    <app-card />
+    <app-card />
+  `,
+})
+export class PlaygroundComponent {
+  text = input('');
+  textChange = output<string>();
+  @ViewChild(Alert) alerts: Alert;
+  @ViewChildren(CustomCard) cards: QueryList<CustomCard>;
+}
+
+```
+<!-- # CODE SLIDE : demo Signal output() -->
+
+---
+
+```TypeScript
+
+@Component({
+  template: `
+    <app-alert>Alert</app-alert>
+    <p>{{ text() }}</p>
+    <app-card />
+    <app-card />
+  `,
+})
+export class PlaygroundComponent {
+  text = input('');
+  textChange = output<string>();
+  alerts = viewChild(Alert);
+  cards = viewChildren(CustomCard);
+}
+
+```
+<!-- # CODE SLIDE : demo Signal viewchild() / viewChildren() -->
 
 <!--
 - moins d'anotation
@@ -605,13 +765,21 @@ https://github.com/tc39/proposal-signals
 
 ---
 
-# CODE SLIDE : demo Signal + Observable toSignal() toObservable()
+```TypeScript
+import { toObservable, toSignal } from '@angular/core/rxjs-interop';
+
+@Component({})
+export class PlaygroundComponent {
+  text = signal('Hello');
+  text$ = toObservable(this.text);
+  textSignal = toSignal(this.text$);
+}
+```
 
 <!--
+# CODE SLIDE : demo Signal + Observable toSignal() toObservable()
+
 - on a des ponts faciles au besoin entre RxJS et les Signals quand même
-- par exemple :
-    - si vous avec une NgRx qui est une store reactif à base d'RxJS
-    - pour les appels http avec HttpClient
 -->
 
 ---
@@ -638,32 +806,56 @@ https://github.com/tc39/proposal-signals
 
 # HttpClient et interceptors
 
+
+---
+
+```TypeScript
+@Component({
+  template: ` <button (click)="clicked()">Get</button> `,
+})
+export class PlaygroundComponent {
+  http = inject(HttpClient);
+
+  clicked() {
+    this.http.get('/axolotl').subscribe();
+  }
+}
+```
+
 <!--
 - Entièrement basé sur RxJS
 - Il faudrait casser l'interface du HttpClient pour changer ça
 - Il faudrait tout ré-écrire pour passer sur des Signals
 - Pas de raison de le faire
 - C'est déjà facile de passer d'un Observable à un Signals
-- Donc HttpClient et interceptor => on reste sur RxJS 
 -->
 
 ---
 
-// TODO slide code avec HttpClient
+```TypeScript
+export function authInterceptor(
+  req: HttpRequest<unknown>,
+  next: HttpHandlerFn
+): Observable<HttpEvent<unknown>> {
+  return next(
+    req.clone({
+      headers: req.headers.set('X-Quiz', 'Axolotl'),
+    })
+  );
+}
 
----
+```
 
-// TODO slide code avec interceptor
+<!--
+- Et aussi les interceptors se basent sur le fait que c'est du RxJS
+- Donc HttpClient et interceptor => on reste sur RxJS 
+-->
 
----
-
-# HttpClient et interceptors
-
-// TODO logo RxJS
 
 ---
 
 # État interne des composants
+
 
 <!--
 - Faire du full Signals pour être plus simple
@@ -713,9 +905,22 @@ https://github.com/tc39/proposal-signals
 
 ---
 
-# The NgXs way
+```TypeScript
+@Component({ ... })
+export class ZooComponent {
+  animals$: Observable<string[]> = this.store.select(ZooState.getAnimals);
 
-// TODO ajouter un bout de code montrant le mapping Signal
+  constructor(private store: Store) {}
+}
+```
+---
+
+```TypeScript
+@Component({ ... })
+export class ZooComponent {
+  animals = select(ZooState.getAnimals);
+}
+```
 
 ---
 
@@ -732,22 +937,56 @@ https://github.com/tc39/proposal-signals
 
 ---
 
-# The NgRx way
+```TypeScript
+type BooksState = {
+  books: Book[];
+  isLoading: boolean;
+  filter: { query: string; order: 'asc' | 'desc' };
+};
 
-// TODO ajouter un bout de code montrant la creation d'un Signal Store
+const initialState: BooksState = {
+  books: [],
+  isLoading: false,
+  filter: { query: '', order: 'asc' },
+};
 
+export const BooksStore = signalStore(
+  withState(initialState),
+  withComputed(/* ... */),
+  withMethods((store, booksService = inject(BooksService)) => ({/* ... */}}))
+);
+```
+
+---
+
+```TypeScript
+@Component({
+  providers: [BooksStore],
+})
+export class BooksComponent {
+  readonly store = inject(BooksStore);
+}
+```
 ---
 
 # The NgRx way
 
-// TODO ajouter un bout de code montrant le mapping Signal dans un composant
-
----
-
-# The NgRx way
-
-// TODO ajouter un bout de code montrant l'utilisation d'RxJS dans le store
-
+```TypeScript
+export const BooksStore = signalStore(
+  withMethods((store, booksService = inject(BooksService)) => ({
+    loadByQuery: rxMethod<string>(
+      pipe(
+        debounceTime(300),
+        distinctUntilChanged(),
+        tap(() => patchState(store, { isLoading: true })),
+        switchMap((query) => {
+          /* ... */
+        })
+      )
+    ),
+  }))
+);
+```
 ---
 
 # En résumé
