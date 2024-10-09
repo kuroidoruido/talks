@@ -2,6 +2,8 @@
 
 ## 2024
 
+- 09/10 - SFEIR Share - [Comment créer des bots GChat facilement pour pas kopeck ?](https://kuroidoruido.github.io/talks/2024/10-09_sfeir-share_bot-gchat/index.html) (50min)
+
 - 21/06 - Voxxed Days Luxembourg - [Adieu RxJS ! Vive les Signals ! Oh wait…](https://kuroidoruido.github.io/talks/2024/06-21_voxxed-lux_adieu-rxjs/index.html) (50min)
 
 - 21/05 - SFEIR Lunch - [Rendez votre application React réactive à l'environnement !](https://kuroidoruido.github.io/talks/2024/05-21_sfeir-lunch_env-reactive-web-app/index.html) (20min)

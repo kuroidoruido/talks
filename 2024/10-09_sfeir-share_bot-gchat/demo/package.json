@@ -1,0 +1,23 @@
+{
+  "name": "demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "gpt": "dotenvx run -- ./gpt.sh",
+    "gchat": "dotenvx run -- ./gchat.sh",
+    "bot": "dotenvx run -- tsx bot.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@dotenvx/dotenvx": "^1.16.1",
+    "@types/node": "^22.7.5",
+    "tsx": "^4.19.1",
+    "typescript": "^5.6.2"
+  },
+  "dependencies": {
+    "@anthonypena/simple-bot": "1.1.1"
+  }
+}
