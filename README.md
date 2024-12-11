@@ -2,6 +2,8 @@
 
 ## 2024
 
+- 12/12 - NantesJS - [Adieu RxJS ! Vive les Signals ! Oh wait…](https://kuroidoruido.github.io/talks/2024/12-12_nantesjs_adieu-rxjs/index.html) (50min)
+
 - 09/10 - SFEIR Share - [Comment créer des bots GChat facilement pour pas kopeck ?](https://kuroidoruido.github.io/talks/2024/10-09_sfeir-share_bot-gchat/index.html) (50min)
 
 - 21/06 - Voxxed Days Luxembourg - [Adieu RxJS ! Vive les Signals ! Oh wait…](https://kuroidoruido.github.io/talks/2024/06-21_voxxed-lux_adieu-rxjs/index.html) (50min)
