@@ -1,5 +1,9 @@
 # Talks
 
+## 2025
+
+- 24/01 - SnowCamp 2025 - [Adieu RxJS ! Vive les Signals ! Oh wait…](https://kuroidoruido.github.io/talks/2025/01-24_snowcamp-2025_adieu-rxjs/index.html) (45min)
+
 ## 2024
 
 - 12/12 - NantesJS - [Adieu RxJS ! Vive les Signals ! Oh wait…](https://kuroidoruido.github.io/talks/2024/12-12_nantesjs_adieu-rxjs/index.html) (30min)
