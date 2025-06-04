@@ -2,6 +2,7 @@
 
 ## 2025
 
+- 05/06 - Devquest 2025 - [Adieu RxJS ! Vive les Signals ! Oh wait…](https://kuroidoruido.github.io/talks/2025/06-05_devquest-2025_adieu-rxjs/index.html) (45min)
 - 24/01 - SnowCamp 2025 - [Adieu RxJS ! Vive les Signals ! Oh wait…](https://kuroidoruido.github.io/talks/2025/01-24_snowcamp-2025_adieu-rxjs/index.html) (45min)
 
 ## 2024
