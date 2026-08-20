@@ -3,5 +3,5 @@
     "editor.fontSize": 14,
     "editor.fontWeight": "normal",
     "editor.formatOnSave": false,
-    "workbench.colorTheme": "Default Dark+"
+    "workbench.colorTheme": "Dark+"
 }
