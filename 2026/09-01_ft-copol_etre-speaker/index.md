@@ -39,7 +39,7 @@ section:not(.main-heading):not(.main-heading-top) h1 {
 }
 
 section:has(img[alt*=bg-diagonal-left]) {
-    padding-left: 53%;
+    padding-left: 45%;
 
     img[alt*=bg-diagonal-left] {
         /* Pour avoir l'image de gauche en biseau plutôt qu'avec un cut vertical droit */
@@ -58,7 +58,7 @@ section:has(img[alt*=bg-diagonal-left]) {
 }
 
 section:has(img[alt*=bg-diagonal-right]) {
-    padding-right: 40%;
+    padding-right: 45%;
 
     img[alt*=bg-diagonal-right] {
         /* Pour avoir l'image de gauche en biseau plutôt qu'avec un cut vertical droit */
@@ -102,6 +102,8 @@ footer {
 ###### Anthony Pena
 
 ![bg Être speaker ? 🤔](img/cover.jpg)
+
+<!-- Comme Guillaume m'a demandé de parler ce que c'est d'être speaker, je me prête à l'exercise comme si j'allais présenter le sujet en conférence ou meetup -->
 
 ---
 
@@ -148,8 +150,307 @@ footer {
 
 ---
 
+# Mon parcours
 
+<!-- On va commencer par parler de qui je suis pour vous parler de tout ça -->
 
+---
+
+# Moi ?
+
+<!--
+
+- à la base je suis un timide
+- être speaker = tenir un rôle
+- Mon premier talk en conf à JUG Summer Camp 2021
+- Mon premier talk en meetup le 30 avril 2019 (SFEIR Lunch)
+
+-->
+
+---
+
+# C'est mon ADN !
+
+<!--
+
+- premier devfest nantes en étudiant en 2015, tous fait depuis
+- premier meetup en participant vers 2014
+- bénévole à Devfest Nantes depuis 3 ans
+- orga NGB depuis 2 ans
+- orga Angular Dev France depuis 2023
+
+-->
+
+--- 
+
+# Pourquoi devenir speaker ?
+
+<!--
+- partager largement
+- partager différemment
+- rencontrer des gens
+- rencontrer d'autres speakers
+- élargir son réseau de connaissance
+- élargir son réseau d'influence
+-->
+
+---
+
+# Les "Call For Paper"
+
+---
+
+# TODO : montrer un abstract de CFP sur conférence hall
+
+---
+
+# Règle 1 : vous ne serez pas pris.
+
+---
+
+# Règle 2 : vous ne serez pas pris !
+
+---
+
+# Règle 3 : vous ne serez pas pris...
+
+---
+
+# Trop de proposition
+
+<!--
+
+- environ 10:1 sur les grosses confs comme Devoxx ou Devfest Nantes
+- 3:1 pour les petites/très petite conf comme NGB
+
+-->
+
+---
+
+# TODO : Montrer la répartition entre proposition faites vs retenus sur mes derniers talks
+
+---
+
+<!--
+- Mais si on veut parler en conférence, il faut tenter quand même
+- passer par les meetups c'est aussi une bon plan
+    - moins de pression
+    - on peut tester notre sujet
+    - peut-être une première captation
+    - on peut écrire
+-->
+
+---
+
+# Le sujet vs le format vs la hype
+<!--
+- format adapté au talk
+- format adapté à la conf
+- bon axe pour un sujet
+- courbe de la hype
+-->
+
+---
+
+# Et si vous êtes retenu ?
+
+<!--
+
+- Je vais vous parler de MA façon de faire
+- Chacun ses techniques
+- Chacun sa "stack"
+
+-->
+
+---
+
+![bg blur:40px](./img/kaamelott-premier-volet.jpg)
+
+# Un peu de musique ?
+
+<!--
+
+- Depuis quelques temps
+- pas systématique
+- j'essaie de garder le même album du début à la fin et à travers les sessions
+- ça me permet d'avoir une ambiance uniforme
+
+-->
+---
+
+![bg](./img/kaamelott-premier-volet.jpg)
+
+# Un peu de musique !
+
+<!--
+
+- ce talk a été rédigé avec la Bande Original du film Kaamelott Premier Volet pour les curiuex
+
+-->
+
+---
+
+<style scoped>
+    h1 {
+        position: absolute;
+        bottom: 20%;
+        right: 10%;
+    }
+</style>
+
+![bg](./img/mindmap.png)
+
+# Une mindmap 
+
+<!--
+
+- noter toutes les idées
+- regrouper ensemble ce qui va ensemble
+- éliminer tout ce qui est trop au bord du sujet
+- structurer avant de rédiger
+
+-->
+
+---
+
+![bg](./img/marp.png)
+
+# Un slide deck
+
+<!--
+- Il y a plein d'outil
+    - chacun les siens
+- perso je préfère faire mes slides as code
+    - en perso avec Marp
+    - j'ai aussi fait du Reveal.js quand j'étais chez SFEIR
+- toujours en noir sur blanc
+    - parce que y'a des écrans pourri
+
+-->
+
+---
+
+<!-- _backgroundColor: "black" -->
+
+<!-- Et si on faisait sans slide ? -->
+
+---
+
+<style scoped>
+    h1 {
+        position: absolute;
+        top: 20%;
+        left: 10%;
+    }
+</style>
+
+![bg](./img/slideless.jpg)
+
+# Slideless
+
+<!--
+
+- Ici 
+- Camping des speakers 2023 - "On vit déjà dans un monde fédéré !"
+
+-->
+
+---
+
+<style scoped>
+    h1 {
+        position: absolute;
+        top: 20%;
+        left: 10%;
+    }
+    img[alt*=feu-de-camp] {
+        position: absolute;
+        top: -40%;
+        bottom: 0;
+        right: 10%;
+        height: 200%
+    }
+</style>
+
+![bg blur](./img/slideless.jpg)
+![feu-de-camp](./img/slideless-portable.jpg)
+
+# Slideless
+
+<!--
+
+- Ici 
+- Camping des speakers 2023 - "On vit déjà dans un monde fédéré !"
+
+-->
+
+---
+
+<style scoped>
+    h1 {
+        position: absolute;
+        top: 20%;
+        left: 10%;
+    }
+    img[alt*=feu-de-camp] {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 10%;
+        height: 100%
+    }
+</style>
+
+![bg blur](./img/slideless.jpg)
+![feu-de-camp](./img/slideless-yulianna-khorolich.jpg)
+
+# Slideless
+
+<!--
+
+- Ici 
+- Camping des speakers 2023 - "On vit déjà dans un monde fédéré !"
+
+-->
+
+---
+
+# Le jour J
+
+<!--
+- arriver minimum 20min avant
+    - la conf d'avant si possible
+- boire un verre d'eau plate puis aller faire pipi 10-15min avant
+- boire une grosse gorgée d'eau 5min avant
+- étirer ses lèvres un peu avant de commencer
+- s' "énergiser" juste avant commencer (par ex : sauter sur place)
+- connaître sa première phrase par cœur
+
+-->
+
+---
+
+# (Combien de temps pour préparer ce talk ?)
+
+<!--
+
+pour 15min :
+- 2h pour la mindmap
+- 1h30 sur les slides intro + présentation début / fin
+- 1h pour le découpage en slide
+- style sur les slides TODO ?
+- répétition TODO ?
+    - pour m'assurer que c'est fluide et que le timing tien
+
+-->
+
+---
+
+# Et vous : c'est pour quand ?
+
+<!--
+- chaud pour aider de mon côté
+-->
 
 ---
 
