@@ -3,7 +3,7 @@ marp: true
 theme: default
 title: Être speaker ? 🤔 - Anthony PENA - https://k49.fr.nf
 html: true
-footer: @_Anthony_Pena
+footer: Anthony PENA
 ---
 
 <style>
@@ -36,6 +36,8 @@ section:not(.main-heading):not(.main-heading-top) h1 {
     background-color: rgba(255,255,255,0.8);
     width: fit-content;
     padding: .3em 1em;
+    border: 2px solid darkorange;
+    border-width: 2px 6px 6px 2px;
 }
 
 section:has(img[alt*=bg-diagonal-left]) {
@@ -103,10 +105,10 @@ footer {
 
 ![bg Être speaker ? 🤔](img/cover.jpg)
 
-<!-- Comme Guillaume m'a demandé de parler ce que c'est d'être speaker, je me prête à l'exercise comme si j'allais présenter le sujet en conférence ou meetup -->
+<!-- Comme Guillaume m'a demandé de parler ce que c'est d'être speaker, je me suis prêté à l'exercise de créer un talk comme si j'allais présenter le sujet en conférence ou meetup -->
 
 ---
-
+<!--
 <style scoped>
 section {
    display: flex;
@@ -140,7 +142,6 @@ footer {
 }
 </style>
 
-<!-- ![bg right:33%](img/social/me.jpg) -->
 ![bg-diagonal-left](img/social/me.jpg)
 
 # Anthony Pena
@@ -149,6 +150,17 @@ footer {
 ![angulardevs.fr](img/social/angular-devs.svg) ![ngb](img/social/ng-baguette-logo-colorfull-black.png)
 
 ---
+-->
+
+<style scoped>
+    h1 {
+        position: absolute;
+        bottom: 20%;
+        left: 10%;
+    }
+</style>
+
+![bg](./img/mon-parcours.jpg)
 
 # Mon parcours
 
@@ -156,32 +168,39 @@ footer {
 
 ---
 
-# Moi ?
+<style scoped>
+    h1 {
+        position: absolute;
+        bottom: 20%;
+        right: 10%;
+    }
+</style>
 
-<!--
-
-- à la base je suis un timide
-- être speaker = tenir un rôle
-- Mon premier talk en conf à JUG Summer Camp 2021
-- Mon premier talk en meetup le 30 avril 2019 (SFEIR Lunch)
-
--->
-
----
+![bg](./img/adn.jpg)
 
 # C'est mon ADN !
 
 <!--
 
-- premier devfest nantes en étudiant en 2015, tous fait depuis
 - premier meetup en participant vers 2014
+    - presque 1 meetup / semaine entre 2014 et 2017
+- premier devfest nantes en étudiant en 2015, tous fait depuis
 - bénévole à Devfest Nantes depuis 3 ans
+- orga Angular Dev France depuis 3 ans
 - orga NGB depuis 2 ans
-- orga Angular Dev France depuis 2023
-
 -->
 
 --- 
+
+<style scoped>
+    h1 {
+        position: absolute;
+        bottom: 20%;
+        left: 10%;
+    }
+</style>
+
+![bg](./img/rencontre.jpg)
 
 # Pourquoi devenir speaker ?
 
@@ -196,25 +215,103 @@ footer {
 
 ---
 
+![bg](./img/panda-jug-summer-camp.jpg)
+
+# Je voulais monter sur scène !
+
+<!--
+
+- Mon premier talk en meetup le 30 avril 2019 (SFEIR Lunch)
+- Mon premier talk en conf à JUG Summer Camp 2021
+
+-->
+
+---
+
+![bg fit](./img/Gartner_Hype_Cycle.svg)
+
+# Le sujet vs le format vs la hype
+<!--
+- format adapté au talk
+- format adapté à la conf
+- bon axe pour un sujet
+- courbe de la hype
+-->
+
+---
+
+<style scoped>
+    h1 {
+        position: absolute;
+        bottom: 20%;
+        right: 10%;
+    }
+</style>
+
+![bg](./img/call-for-paper.jpg)
+
 # Les "Call For Paper"
 
 ---
 
-# TODO : montrer un abstract de CFP sur conférence hall
+![bg](./img/conference-hall_rxjs-abstract.png)
 
 ---
+
+![bg](./img/conference-hall_rxjs-references.png)
+
+---
+
+<style scoped>
+    h1 {
+        position: absolute;
+        bottom: 20%;
+        right: 10%;
+    }
+</style>
+
+![bg](./img/reject-1.jpg)
 
 # Règle 1 : vous ne serez pas pris.
 
 ---
 
+<style scoped>
+    h1 {
+        position: absolute;
+        /* bottom: 20%; */
+        right: 10%;
+    }
+</style>
+
+![bg](./img/reject-2.jpg)
+
 # Règle 2 : vous ne serez pas pris !
 
 ---
 
+<style scoped>
+    h1 {
+        position: absolute;
+        top: 20%;
+        right: 10%;
+    }
+</style>
+
+![bg](./img/reject-3.jpg)
+
 # Règle 3 : vous ne serez pas pris...
 
 ---
+
+<style scoped>
+    h1 {
+        position: absolute;
+        bottom: 20%;
+    }
+</style>
+
+![bg](./img/top-de-proposition.jpg)
 
 # Trop de proposition
 
@@ -227,9 +324,29 @@ footer {
 
 ---
 
-# TODO : Montrer la répartition entre proposition faites vs retenus sur mes derniers talks
+![bg](./img/conference-hall_rxjs-propositions.png)
+
+<!--
+- mon dernier talk solo
+- 20 propositions via Conference Hall
+    - Conference Hall = la plateforme la plus utilisé aujourd'hui en France
+- acceptés 2 fois
+    - + Voxxed Luxembourg 2024
+    - refusé à Devoxx France aussi (peut-être d'autres que j'ai oublié)
+-->
 
 ---
+
+<style scoped>
+    h1 {
+        position: absolute;
+        bottom: 20%;
+    }
+</style>
+
+![bg](./img/meetup.jpg)
+
+# Les meetups c'est cool aussi !
 
 <!--
 - Mais si on veut parler en conférence, il faut tenter quand même
@@ -237,20 +354,13 @@ footer {
     - moins de pression
     - on peut tester notre sujet
     - peut-être une première captation
-    - on peut écrire
+    - on peut faire quelque chose de moins léché
+    - on a déjà notre abstract dans Conference-Hall
 -->
 
 ---
 
-# Le sujet vs le format vs la hype
-<!--
-- format adapté au talk
-- format adapté à la conf
-- bon axe pour un sujet
-- courbe de la hype
--->
-
----
+![bg](./img/saut-dde-joie.jpg)
 
 # Et si vous êtes retenu ?
 
@@ -332,7 +442,7 @@ footer {
 
 <!-- _backgroundColor: "black" -->
 
-<!-- Et si on faisait sans slide ? -->
+<!-- Considérer l'option de ne pas faire de slide -->
 
 ---
 
@@ -363,7 +473,7 @@ footer {
         top: 20%;
         left: 10%;
     }
-    img[alt*=feu-de-camp] {
+    img[alt*=portable] {
         position: absolute;
         top: -40%;
         bottom: 0;
@@ -373,7 +483,7 @@ footer {
 </style>
 
 ![bg blur](./img/slideless.jpg)
-![feu-de-camp](./img/slideless-portable.jpg)
+![portable](./img/slideless-portable.jpg)
 
 # Slideless
 
@@ -392,16 +502,24 @@ footer {
         top: 20%;
         left: 10%;
     }
+    img[alt*=portable] {
+        position: absolute;
+        top: -40%;
+        bottom: 0;
+        right: 10%;
+        height: 200%
+    }
     img[alt*=feu-de-camp] {
         position: absolute;
         top: 0;
         bottom: 0;
-        right: 10%;
+        right: 30%;
         height: 100%
     }
 </style>
 
 ![bg blur](./img/slideless.jpg)
+![portable blur](./img/slideless-portable.jpg)
 ![feu-de-camp](./img/slideless-yulianna-khorolich.jpg)
 
 # Slideless
@@ -414,6 +532,8 @@ footer {
 -->
 
 ---
+
+![bg](./img/jour-j.jpg)
 
 # Le jour J
 
@@ -428,28 +548,55 @@ footer {
 
 -->
 
----
-
-# (Combien de temps pour préparer ce talk ?)
-
-<!--
-
-pour 15min :
-- 2h pour la mindmap
-- 1h30 sur les slides intro + présentation début / fin
-- 1h pour le découpage en slide
-- style sur les slides TODO ?
-- répétition TODO ?
-    - pour m'assurer que c'est fluide et que le timing tien
-
--->
 
 ---
+
+<style scoped>
+    h1 {
+        position: absolute;
+        bottom: 20%;
+        right: 0;
+        left: 0;
+        margin: 0 auto;
+    }
+</style>
+
+![bg](./img/need-you.jpg)
 
 # Et vous : c'est pour quand ?
 
 <!--
 - chaud pour aider de mon côté
+-->
+
+---
+
+<style scoped>
+    h1 {
+        position: absolute;
+        bottom: 20%;
+        right: 0;
+        left: 0;
+        margin: 0 auto;
+    }
+</style>
+
+![bg](./img/question.jpg)
+
+# (Combien de temps pour préparer ce talk ?)
+
+<!--
+
+pour 15min de talk :
+- 2h pour la mindmap
+- 1h30 sur les slides intro + présentation début / fin
+- 1h pour le découpage en slide
+- 20min pour une première répétition
+- 1h40 style sur les slides
+- 2 répétitions pour ajuster le timing 30 min
+
+- total = 7h
+
 -->
 
 ---

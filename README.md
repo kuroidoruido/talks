@@ -1,7 +1,12 @@
 # Talks
 
-## 2025
+## 2026
 
+- 01/09 - France Travail (interne) - [Être Speaker](https://kuroidoruido.github.io/talks/2026/09-01_ft-copol_etre-speaker/index.html) (15min)
+- 11/06 - Devquest 2026 (Niort) - Vous croyez connaître Git ? Challenge Accepted (workshop)
+- 24/04 - Devoxx France 2026 - Vous croyez connaître Git ? Challenge Accepted (workshop)
+
+## 2025
 
 - 09/07 - SFEIR Share - [Comment faire le post LinkedIn parfait ?](https://kuroidoruido.github.io/talks/2025/07-09_sfeir-share_post-linkedin-parfait/index.html) (30min)
 - 05/06 - Devquest 2025 - [Adieu RxJS ! Vive les Signals ! Oh wait…](https://kuroidoruido.github.io/talks/2025/06-05_devquest-2025_adieu-rxjs/index.html) (45min)
@@ -10,18 +15,19 @@
 ## 2024
 
 - 12/12 - NantesJS - [Adieu RxJS ! Vive les Signals ! Oh wait…](https://kuroidoruido.github.io/talks/2024/12-12_nantesjs_adieu-rxjs/index.html) (30min)
-
 - 09/10 - SFEIR Share - [Comment créer des bots GChat facilement pour pas kopeck ?](https://kuroidoruido.github.io/talks/2024/10-09_sfeir-share_bot-gchat/index.html) (50min)
-
 - 21/06 - Voxxed Days Luxembourg - [Adieu RxJS ! Vive les Signals ! Oh wait…](https://kuroidoruido.github.io/talks/2024/06-21_voxxed-lux_adieu-rxjs/index.html) (50min)
-
 - 21/05 - SFEIR Lunch - [Rendez votre application React réactive à l'environnement !](https://kuroidoruido.github.io/talks/2024/05-21_sfeir-lunch_env-reactive-web-app/index.html) (20min)
-
 - 22/02 - React Nantes - [Rendez votre application React réactive à l'environnement !](https://kuroidoruido.github.io/talks/2024/02-22_react-nantes_env-reactive-web-app/index.html) (20min)
+- 09/02 - Touraine Tech 2024 - [Changer son environnement fullstack en un clin d'oeil avec devenv](https://github.com/jtanguy/workshop-devenv) (avec [Julien Tanguy](https://github.com/jtanguy/)) (workshop)
 
 ## 2023
 
+- 19/10 - Devfest Nantes 2023 - [Changer son environnement fullstack en un clin d'oeil avec devenv](https://github.com/jtanguy/workshop-devenv) (avec [Julien Tanguy](https://github.com/jtanguy/))
+- 12/10 - Volcamp 2023 - [Changer son environnement fullstack en un clin d'oeil avec devenv](https://github.com/jtanguy/workshop-devenv) (avec [Julien Tanguy](https://github.com/jtanguy/)) (workshop)
 - 27/06 - SFEIR Battle Front - [Angular](https://kuroidoruido.github.io/talks/2023/06-27_sfeir-battle-front_angular/index.html) (7min)
+- 15/06 - Camping des Speakers 2023 - On vit déjà dans un monde fédéré !
+- 23/03 - DevDay 2023 - Comment rédiger des tests Cypress avec le mindset d'un utilisateur final? (avec [Gerome Grignon](https://github.com/geromegrignon/)) (45min)
 
 ## 2022
 
@@ -29,8 +35,9 @@
 - 13/10 - Volcamp 2022 - [Cargo ou comment étendre le tooling Rust à l'infini !](https://kuroidoruido.github.io/talks/2022/10-13_volcamp_tooling-rust-extensible/index.html) (20min)
 - 20/09 - SFEIR Share - [Ma mission en 5min : GladIA](https://kuroidoruido.github.io/talks/2022/09-20_sfeir-share_ma-mission-en-5-min--gladia/index.html) (5min)
 - 01/07 - SunnyTech 2022 - [Cargo ou comment étendre le tooling Rust à l'infini !](https://kuroidoruido.github.io/talks/2022/07-01_sunnytech_tooling-rust-extensible/index.html) (20min)
-- 09/06 - Camping des speakers - [Java à la vitesse de la lumière grâce au Graal !](https://kuroidoruido.github.io/talks/2022/06-09_camping-des-speakers_java-graalvm/index.html) (20min)
+- 09/06 - Camping des speakers 2022 - [Java à la vitesse de la lumière grâce au Graal !](https://kuroidoruido.github.io/talks/2022/06-09_camping-des-speakers_java-graalvm/index.html) (20min)
 - 24/05 - SFEIR QuarterBacks - [Cargo ou comment étendre le tooling Rust à l'infini !](https://kuroidoruido.github.io/talks/2022/05-24_sfeir-quarterbacks_tooling-rust-extensible/index.html) (20min)
+- 22/04 - Devoxx France - [Enrichir son application web sans toucher au code source, c'est possible grâce au nouveau standard Web Extension API !](https://github.com/devsheder/Slides-Web-Extensions) (avec [Adrien Lasselle](https://github.com/devsheder)) (45min)
 
 ## 2021
 
