@@ -108,6 +108,35 @@ footer {
 <!-- Comme Guillaume m'a demandé de parler ce que c'est d'être speaker, je me suis prêté à l'exercise de créer un talk comme si j'allais présenter le sujet en conférence ou meetup -->
 
 ---
+
+<!-- _class: main-heading-top h1-white -->
+
+<style scoped>
+h1 {
+    text-align: center;
+}
+h6 {
+    position: absolute;
+    bottom: 0;
+    right: 1rem;
+    color: white;
+    text-shadow: #000 0px 0 6px;
+}
+a {
+    color: white;
+}
+footer {
+  display: none;
+}
+</style>
+
+###### Anthony Pena
+
+![bg Être speaker ? 🤔](img/cover.jpg)
+
+<!-- Comme Guillaume m'a demandé de parler ce que c'est d'être speaker, je me suis prêté à l'exercise de créer un talk comme si j'allais présenter le sujet en conférence ou meetup -->
+
+---
 <!--
 <style scoped>
 section {
